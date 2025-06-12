@@ -1,9 +1,32 @@
-<h1>JavaScript Objectball</h1>
-<p>
-  Open your Chrome dev tools to see console output and trigger the debugger to
-  catch.
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Object Ball Game</title>
+</head>
+<body>
+  <h1>NBA Player Stats</h1>
+  <div id="output"></div>
 
-<script src="./src/00-objectball.js"></script>
-<script src="./src/01-simple-debug.js"></script>
-<!-- <script src="./src/02-advanced-debug.js"></script> -->
+  <script src="objectball.js"></script>
+  <script>
+    
+    const outputDiv = document.getElementById('output');
+
+    const benPoints = numPointsScored("Ben Gordon");
+    const lopezShoe = shoeSize("Brook Lopez");
+    const teamColorsList = teamColors("Charlotte Hornets");
+    const rebounds = bigShoeRebounds();
+
+    outputDiv.innerHTML = `
+      <p><strong>Ben Gordon's Points:</strong> ${benPoints}</p>
+      <p><strong>Brook Lopez's Shoe Size:</strong> ${lopezShoe}</p>
+      <p><strong>Charlotte Hornets Colors:</strong> ${teamColorsList.join(", ")}</p>
+      <p><strong>Rebounds of Player with Largest Shoe Size:</strong> ${rebounds}</p>
+    `;
+  </script>
+</body>
+</html>
+
+
